@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{4E6E98AB-3B40-424E-9E77-8A516D3DDE27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{271421EA-3FDB-4164-9E5E-A35130AA8127}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Api", "Services\Catalog\Catalog.Api\Catalog.Api.csproj", "{C140D10A-58D6-4877-94B1-BBD14727936F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{94859A36-6D53-427A-8263-26042E04B9EB}"
+	ProjectSection(SolutionItems) = preProject
+		Ports.txt = Ports.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{CD1B3154-00F9-422A-A89D-2CFBCA49473B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshop.Shared", "Shared\Bookshop.Shared\Bookshop.Shared.csproj", "{F74C48FF-74B8-4B2E-94FC-BB7F3A5D0AE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C140D10A-58D6-4877-94B1-BBD14727936F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C140D10A-58D6-4877-94B1-BBD14727936F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C140D10A-58D6-4877-94B1-BBD14727936F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C140D10A-58D6-4877-94B1-BBD14727936F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F74C48FF-74B8-4B2E-94FC-BB7F3A5D0AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F74C48FF-74B8-4B2E-94FC-BB7F3A5D0AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F74C48FF-74B8-4B2E-94FC-BB7F3A5D0AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F74C48FF-74B8-4B2E-94FC-BB7F3A5D0AE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{271421EA-3FDB-4164-9E5E-A35130AA8127} = {4E6E98AB-3B40-424E-9E77-8A516D3DDE27}
+		{C140D10A-58D6-4877-94B1-BBD14727936F} = {271421EA-3FDB-4164-9E5E-A35130AA8127}
+		{F74C48FF-74B8-4B2E-94FC-BB7F3A5D0AE0} = {CD1B3154-00F9-422A-A89D-2CFBCA49473B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B61ADAE6-6CD4-468F-AD15-F1A51AFF3DB5}
+	EndGlobalSection
+EndGlobal
