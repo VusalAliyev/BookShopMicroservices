@@ -20,9 +20,11 @@ namespace Catalog.Api.Services
             _mapper = mapper;
         }
 
-        public Task<Response<CategoryDto>> CreateAsync(Category category)
+        public async Task<Response<CategoryDto>> CreateAsync(Category category)
         {
-            throw new NotImplementedException();
+            await _categoryCollection.InsertOneAsync(category);
+
+            return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(category), 200);
         }
 
         public async Task<Response<List<CategoryDto>>> GetAllAsync()
@@ -32,9 +34,17 @@ namespace Catalog.Api.Services
             return Response<List<CategoryDto>>.Success(_mapper.Map<List<CategoryDto>>(categories), 200);
         }
 
-        public Task<Response<CategoryDto>> GetByIdAsync(string id)
+        public async Task<Response<CategoryDto>> GetByIdAsync(string id)
         {
-            throw new NotImplementedException();
+            var category = await _categoryCollection.Find<Category>(x => x.Id == id).FirstOrDefaultAsync();
+
+            if (category == null)
+            {
+                return Response<CategoryDto>.Fail("Category not found", 404);
+            }
+
+            return Response<CategoryDto>.Success(_mapper.Map<CategoryDto>(category), 200);
+
         }
     }
 }
