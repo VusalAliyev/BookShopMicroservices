@@ -17,6 +17,7 @@ namespace Catalog.Api.Services
             var client = new MongoClient(databaseSettings.ConnectionString);
             var database = client.GetDatabase(databaseSettings.DatabaseName);
             _bookCollection = database.GetCollection<Book>(databaseSettings.BookCollectionName);
+            _categoryCollection = database.GetCollection<Category>(databaseSettings.CategoryCollectionName);
             _mapper = mapper;
         }
         public async Task<Response<List<BookDto>>> GetAllAsync()
