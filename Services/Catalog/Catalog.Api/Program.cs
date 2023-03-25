@@ -17,7 +17,7 @@ builder.Services.AddControllers(opt =>
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.Authority = builder.Configuration["IdentityServerURL"];
-    options.Audience = "resource_catalg";
+    options.Audience = "resource_catalog";
     options.RequireHttpsMetadata = false;
 });
 builder.Services.AddEndpointsApiExplorer();
