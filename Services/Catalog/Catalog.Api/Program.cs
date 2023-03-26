@@ -19,6 +19,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     options.Authority = builder.Configuration["IdentityServerURL"];
     options.Audience = "resource_catalog";
     options.RequireHttpsMetadata = false;
+
 });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
