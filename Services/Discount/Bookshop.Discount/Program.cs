@@ -1,10 +1,8 @@
-using Bookshop.Basket.Services;
-using Bookshop.Basket.Settings;
+using Bookshop.Discount.Services;
 using Bookshop.Shared.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.Extensions.Options;
 using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,12 +15,12 @@ var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticat
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
-builder.Services.AddScoped<IBasketService, BasketService>();
+builder.Services.AddScoped<IDiscountService, DiscountService>();
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.Authority = builder.Configuration["IdentityServerURL"];
-    options.Audience = "resource_basket";
+    options.Audience = "resource_discount";
     options.RequireHttpsMetadata = false;
 
 });
@@ -32,17 +30,6 @@ builder.Services.AddControllers(opt =>
     opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));
 });
 builder.Services.AddSwaggerGen();
-builder.Services.Configure<RedisSettings>(builder.Configuration.GetSection("RedisSettings"));
-builder.Services.AddSingleton<RedisService>(sp =>
-{
-    var redisSettings = sp.GetRequiredService<IOptions<RedisSettings>>().Value;
-
-    var redis = new RedisService(redisSettings.Port, redisSettings.Host);
-
-    redis.Connect();
-
-    return redis;
-});
 
 
 
@@ -54,7 +41,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseAuthentication();
 app.UseAuthorization();
 
