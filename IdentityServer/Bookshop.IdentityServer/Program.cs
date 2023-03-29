@@ -56,7 +56,7 @@ namespace Bookshop.IdentityServer
 
                     if (!userManager.Users.Any())
                     {
-                        userManager.CreateAsync(new ApplicationUser { UserName = "vusalaliyev", Email = "vusal@gmail.com", City = "Baku" }, "Vusal123!").Wait();
+                        userManager.CreateAsync(new ApplicationUser { UserName = "vusalaliyev", Email = "vusal@gmail.com", City = "Baku" }, "Password12*").Wait();
                     }
                 }
 
