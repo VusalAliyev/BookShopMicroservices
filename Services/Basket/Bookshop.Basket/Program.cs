@@ -27,10 +27,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 
 });
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddControllers(opt =>
-{
-    opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));
-});
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<RedisSettings>(builder.Configuration.GetSection("RedisSettings"));
 builder.Services.AddSingleton<RedisService>(sp =>
@@ -44,6 +40,10 @@ builder.Services.AddSingleton<RedisService>(sp =>
     return redis;
 });
 
+builder.Services.AddControllers(opt =>
+{
+    opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));
+});
 
 
 var app = builder.Build();

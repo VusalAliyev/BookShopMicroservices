@@ -31,9 +31,9 @@ namespace Bookshop.Discount.Services
             return Response<List<Models.Discount>>.Success(discounts.ToList(), 200);
         }
 
-        public async Task<Response<Models.Discount>> GetByCodeAndUserId(string code, string userld)
+        public async Task<Response<Models.Discount>> GetByCodeAndUserId(string code, string userId)
         {
-            var discounts = await _dbConnection.QueryAsync<Models.Discount>("select * from discount where userid=@UserId and code=@Code", new { UserId = userld, Code = code });
+            var discounts = await _dbConnection.QueryAsync<Models.Discount>("select * from discount where userid=@UserId and code=@Code", new { UserId = userId, Code = code });
 
             var hasDiscount = discounts.FirstOrDefault();
 
@@ -71,7 +71,7 @@ namespace Bookshop.Discount.Services
 
         public async Task<Response<NoContent>> Update(Models.Discount discount)
         {
-            var status = await _dbConnection.ExecuteAsync("update discount set userid=@UserId, code=@Code, rate=@Rate where id=@Id", new { Id = discount.Id, UserId = discount.Userld, Code = discount.Code, Rate = discount.Rate });
+            var status = await _dbConnection.ExecuteAsync("update discount set userid=@UserId, code=@Code, rate=@Rate where id=@Id", new { Id = discount.Id, UserId = discount.UserId, Code = discount.Code, Rate = discount.Rate });
 
             if (status > 0)
             {

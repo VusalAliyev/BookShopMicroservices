@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Bookshop.Order.Application.Dtos;
+using Bookshop.Shared.Dtos;
+using MediatR;
 
 namespace Bookshop.Order.Application.Queries
 {
-    internal class GetOrdersByUserIdQuery
+    public class GetOrdersByUserIdQuery : IRequest<Response<List<OrderDto>>>
     {
+        public string UserId { get; set; }
     }
 }

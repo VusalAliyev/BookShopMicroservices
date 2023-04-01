@@ -22,14 +22,16 @@ namespace Bookshop.IdentityServer.Controllers
         {
             _userManager = userManager;
         }
+        [HttpPost]
         public async Task<IActionResult> SignUp(SignupDto signupDto)
         {
             var user = new ApplicationUser
             {
                 UserName = signupDto.UserName,
                 Email = signupDto.Email,
-                City = signupDto.City,
+                City = signupDto.City
             };
+
             var result = await _userManager.CreateAsync(user, signupDto.Password);
 
             if (!result.Succeeded)
@@ -40,21 +42,16 @@ namespace Bookshop.IdentityServer.Controllers
             return NoContent();
         }
 
+        [HttpGet]
         public async Task<IActionResult> GetUser()
         {
             var userIdClaim = User.Claims.FirstOrDefault(x => x.Type == JwtRegisteredClaimNames.Sub);
 
-            if (userIdClaim == null)
-            {
-                return BadRequest();
-            }
+            if (userIdClaim == null) return BadRequest();
 
             var user = await _userManager.FindByIdAsync(userIdClaim.Value);
 
-            if (user == null)
-            {
-                return BadRequest();
-            }
+            if (user == null) return BadRequest();
 
             return Ok(new { Id = user.Id, UserName = user.UserName, Email = user.Email, City = user.City });
         }

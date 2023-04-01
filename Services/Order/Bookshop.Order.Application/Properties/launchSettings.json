@@ -1,12 +1,12 @@
 {
   "profiles": {
-    "SelfHost": {
+    "Bookshop.Order.Application": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:5001"
+      "applicationUrl": "https://localhost:59368;http://localhost:59370"
     }
   }
 }

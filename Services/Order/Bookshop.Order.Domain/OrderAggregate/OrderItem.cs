@@ -1,25 +1,31 @@
-﻿namespace Bookshop.Order.Domain.OrderAggregate
+﻿using Bookshop.Order.Domain.Core;
+
+namespace Bookshop.Order.Domain.OrderAggregate
 {
-    public class OrderItem
+    public class OrderItem : Entity
     {
-        public OrderItem(string productId, string productName, string productUrl, decimal price)
+        public string ProductId { get; private set; }
+        public string ProductName { get; private set; }
+        public string PictureUrl { get; private set; }
+        public Decimal Price { get; private set; }
+
+        public OrderItem()
+        {
+        }
+
+        public OrderItem(string productId, string productName, string pictureUrl, decimal price)
         {
             ProductId = productId;
             ProductName = productName;
-            ProductUrl = productUrl;
+            PictureUrl = pictureUrl;
             Price = price;
         }
-
-        public string ProductId { get; set; }
-        public string ProductName { get; set; }
-        public string ProductUrl { get; set; }
-        public decimal Price { get; set; }
 
         public void UpdateOrderItem(string productName, string pictureUrl, decimal price)
         {
             ProductName = productName;
-            ProductUrl = pictureUrl;
             Price = price;
+            PictureUrl = pictureUrl;
         }
     }
 }

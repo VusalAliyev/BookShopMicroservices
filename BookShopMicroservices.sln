@@ -36,15 +36,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshop.Discount", "Servic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{45E03D3C-AFA6-4C69-81F1-1BC279CC0598}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshop.Order.API", "Services\Order\Bookshop.Order.API\Bookshop.Order.API.csproj", "{CA6E3FCC-BDFC-4403-94CE-0562294A80C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshop.Order.API", "Services\Order\Bookshop.Order.API\Bookshop.Order.API.csproj", "{CA6E3FCC-BDFC-4403-94CE-0562294A80C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshop.Order.Application", "Services\Order\Bookshop.Order.Application\Bookshop.Order.Application.csproj", "{BD2F8143-858D-4EF4-987D-AF7AC975194A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshop.Order.Application", "Services\Order\Bookshop.Order.Application\Bookshop.Order.Application.csproj", "{BD2F8143-858D-4EF4-987D-AF7AC975194A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshop.Order.Domain", "Services\Order\Bookshop.Order.Domain\Bookshop.Order.Domain.csproj", "{04C5C50E-FFE5-4E62-95F0-F81E34853061}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshop.Order.Domain", "Services\Order\Bookshop.Order.Domain\Bookshop.Order.Domain.csproj", "{04C5C50E-FFE5-4E62-95F0-F81E34853061}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshop.Order.Domain.Core", "Services\Order\Bookshop.Order.Domain.Core\Bookshop.Order.Domain.Core.csproj", "{6AB10FD9-43D1-409A-A16A-627BFEB8BDE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshop.Order.Domain.Core", "Services\Order\Bookshop.Order.Domain.Core\Bookshop.Order.Domain.Core.csproj", "{6AB10FD9-43D1-409A-A16A-627BFEB8BDE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshop.Order.Infrastructure", "Services\Order\Bookshop.Order.Infrastructure\Bookshop.Order.Infrastructure.csproj", "{971E2AC6-0C9A-4247-9D4A-E3A01F3C3771}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshop.Order.Infrastructure", "Services\Order\Bookshop.Order.Infrastructure\Bookshop.Order.Infrastructure.csproj", "{971E2AC6-0C9A-4247-9D4A-E3A01F3C3771}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FakePayment", "FakePayment", "{8A8BA5B4-B404-40D8-BBE1-0AD1C103FBE4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshop.FakePayment", "Services\FakePayment\Bookshop.FakePayment\Bookshop.FakePayment.csproj", "{6CF460F7-3C96-40E9-8963-314A82220A17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{8E903016-47B9-42B3-9FC0-BC463D168789}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshop.Gateway", "Gateways\Bookshop.Gateway\Bookshop.Gateway.csproj", "{C0A7E285-442D-4826-AED2-3314CEC55801}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,6 +104,14 @@ Global
 		{971E2AC6-0C9A-4247-9D4A-E3A01F3C3771}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{971E2AC6-0C9A-4247-9D4A-E3A01F3C3771}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{971E2AC6-0C9A-4247-9D4A-E3A01F3C3771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CF460F7-3C96-40E9-8963-314A82220A17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF460F7-3C96-40E9-8963-314A82220A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CF460F7-3C96-40E9-8963-314A82220A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CF460F7-3C96-40E9-8963-314A82220A17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0A7E285-442D-4826-AED2-3314CEC55801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0A7E285-442D-4826-AED2-3314CEC55801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0A7E285-442D-4826-AED2-3314CEC55801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0A7E285-442D-4826-AED2-3314CEC55801}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +133,9 @@ Global
 		{04C5C50E-FFE5-4E62-95F0-F81E34853061} = {45E03D3C-AFA6-4C69-81F1-1BC279CC0598}
 		{6AB10FD9-43D1-409A-A16A-627BFEB8BDE9} = {45E03D3C-AFA6-4C69-81F1-1BC279CC0598}
 		{971E2AC6-0C9A-4247-9D4A-E3A01F3C3771} = {45E03D3C-AFA6-4C69-81F1-1BC279CC0598}
+		{8A8BA5B4-B404-40D8-BBE1-0AD1C103FBE4} = {4E6E98AB-3B40-424E-9E77-8A516D3DDE27}
+		{6CF460F7-3C96-40E9-8963-314A82220A17} = {8A8BA5B4-B404-40D8-BBE1-0AD1C103FBE4}
+		{C0A7E285-442D-4826-AED2-3314CEC55801} = {8E903016-47B9-42B3-9FC0-BC463D168789}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B61ADAE6-6CD4-468F-AD15-F1A51AFF3DB5}
