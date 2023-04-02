@@ -52,7 +52,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshop.FakePayment", "Ser
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{8E903016-47B9-42B3-9FC0-BC463D168789}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshop.Gateway", "Gateways\Bookshop.Gateway\Bookshop.Gateway.csproj", "{C0A7E285-442D-4826-AED2-3314CEC55801}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookshop.Gateway", "Gateways\Bookshop.Gateway\Bookshop.Gateway.csproj", "{C0A7E285-442D-4826-AED2-3314CEC55801}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{FC0550A9-5DD0-43A2-9730-B289AC9C8A2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookshop.Web", "Frontends\Bookshop.Web\Bookshop.Web.csproj", "{EA709541-6C47-4F01-97DC-B84FFF66F8BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -112,6 +116,10 @@ Global
 		{C0A7E285-442D-4826-AED2-3314CEC55801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0A7E285-442D-4826-AED2-3314CEC55801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0A7E285-442D-4826-AED2-3314CEC55801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA709541-6C47-4F01-97DC-B84FFF66F8BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA709541-6C47-4F01-97DC-B84FFF66F8BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA709541-6C47-4F01-97DC-B84FFF66F8BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA709541-6C47-4F01-97DC-B84FFF66F8BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +144,7 @@ Global
 		{8A8BA5B4-B404-40D8-BBE1-0AD1C103FBE4} = {4E6E98AB-3B40-424E-9E77-8A516D3DDE27}
 		{6CF460F7-3C96-40E9-8963-314A82220A17} = {8A8BA5B4-B404-40D8-BBE1-0AD1C103FBE4}
 		{C0A7E285-442D-4826-AED2-3314CEC55801} = {8E903016-47B9-42B3-9FC0-BC463D168789}
+		{EA709541-6C47-4F01-97DC-B84FFF66F8BF} = {FC0550A9-5DD0-43A2-9730-B289AC9C8A2B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B61ADAE6-6CD4-468F-AD15-F1A51AFF3DB5}
