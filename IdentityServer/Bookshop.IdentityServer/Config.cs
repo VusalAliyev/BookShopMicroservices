@@ -44,7 +44,7 @@ namespace Bookshop.IdentityServer
                 new ApiScope("discount_fullpermission","Discount API için full erişim"),
                 new ApiScope("order_fullpermission","Order API için full erişim"),
                 new ApiScope("payment_fullpermission","Payment API için full erişim"),
-                new ApiScope("gateway_fullpermission","Payment API için full erişim"),
+                new ApiScope("gateway_fullpermission","Gateway API için full erişim"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 

@@ -2,7 +2,8 @@ using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
-Host.CreateDefaultBuilder(args).ConfigureAppConfiguration((hostingContext, config) =>
+
+builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
 {
     config.AddJsonFile($"configuration.{hostingContext.HostingEnvironment.EnvironmentName.ToLower()}.json").AddEnvironmentVariables();
 });

@@ -1,5 +1,7 @@
 ﻿using Bookshop.Web.Models;
 using Bookshop.Web.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bookshop.Web.Controllers
@@ -37,6 +39,13 @@ namespace Bookshop.Web.Controllers
             }
 
             return RedirectToAction(nameof(Index), "Home");
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await _identityService.RemoveRefrestToken();
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
     }
 }
