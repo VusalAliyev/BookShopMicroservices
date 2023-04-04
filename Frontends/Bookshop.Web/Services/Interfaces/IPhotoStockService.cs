@@ -9,4 +9,4 @@ namespace Bookshop.Web.Services.Interfaces
         Task<bool> DeletePhoto(string photoUrl);
     }
 }
-}
+

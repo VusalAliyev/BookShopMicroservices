@@ -1,4 +1,5 @@
-﻿using Bookshop.Shared.ControllerBases;
+﻿using Bookshop.FakePayment.Models;
+using Bookshop.Shared.ControllerBases;
 using Bookshop.Shared.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +10,7 @@ namespace Bookshop.FakePayment.Controllers
     public class FakePaymentsController : CustomBaseController
     {
         [HttpPost]
-        public IActionResult ReceivePayment()
+        public IActionResult ReceivePayment(PaymentDto paymentDto)
         {
             return CreateActionResultInstance(Response<NoContent>.Success(200));
         }

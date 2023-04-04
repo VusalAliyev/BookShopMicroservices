@@ -2,12 +2,14 @@
 using Bookshop.Basket.Services;
 using Bookshop.Shared.ControllerBases;
 using Bookshop.Shared.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bookshop.Basket.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BasketsController : CustomBaseController
     {
         private readonly IBasketService _basketService;
@@ -28,6 +30,7 @@ namespace Bookshop.Basket.Controllers
         [HttpPost]
         public async Task<IActionResult> SaveOrUpdateBasket(BasketDto basketDto)
         {
+            basketDto.UserId = _sharedIdentityService.GetUserId;
             var response = await _basketService.SaveOrUpdate(basketDto);
 
             return CreateActionResultInstance(response);
@@ -35,7 +38,6 @@ namespace Bookshop.Basket.Controllers
 
         [HttpDelete]
         public async Task<IActionResult> DeleteBasket()
-
         {
             return CreateActionResultInstance(await _basketService.Delete(_sharedIdentityService.GetUserId));
         }

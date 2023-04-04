@@ -21,12 +21,12 @@ namespace Bookshop.Web.Services
         public async Task<bool> CreateBookAsync(BookCreateInput bookCreateInput)
         {
 
-            var resultPhotoService = await _photoStockService.UploadPhoto(bookCreateInput.PhotoFormFile);
+            //  var resultPhotoService = await _photoStockService.UploadPhoto(bookCreateInput.PhotoFormFile);
 
-            if (resultPhotoService != null)
-            {
-                bookCreateInput.Picture = resultPhotoService.Uri;
-            }
+            //if (resultPhotoService != null)
+            //{
+            //    bookCreateInput.Picture = resultPhotoService.Uri;
+            //}
 
             var response = await _client.PostAsJsonAsync<BookCreateInput>("books", bookCreateInput);
 
@@ -52,7 +52,7 @@ namespace Bookshop.Web.Services
             var responseSuccess = await response.Content.ReadFromJsonAsync<Response<List<BookViewModel>>>();
             responseSuccess.Data.ForEach(x =>
             {
-                x.Picture = _photoHelper.GetPhotoStockUrl(x.Picture);
+                x.StockPictureUrl = _photoHelper.GetPhotoStockUrl(x.Picture);
             });
 
             return responseSuccess.Data;
@@ -70,7 +70,7 @@ namespace Bookshop.Web.Services
             var responseSuccess = await response.Content.ReadFromJsonAsync<Response<List<BookViewModel>>>();
             responseSuccess.Data.ForEach(x =>
             {
-                x.Picture = _photoHelper.GetPhotoStockUrl(x.Picture);
+                x.StockPictureUrl = _photoHelper.GetPhotoStockUrl(x.Picture);
             });
 
             return responseSuccess.Data;
@@ -101,11 +101,21 @@ namespace Bookshop.Web.Services
 
             var responseSuccess = await response.Content.ReadFromJsonAsync<Response<BookViewModel>>();
 
+            responseSuccess.Data.StockPictureUrl = _photoHelper.GetPhotoStockUrl(responseSuccess.Data.Picture);
+
             return responseSuccess.Data;
         }
 
         public async Task<bool> UpdateBookAsync(BookUpdateInput bookUpdateInput)
         {
+            //var resultPhotoService = await _photoStockService.UploadPhoto(bookUpdateInput.PhotoFormFile);
+
+            //if (resultPhotoService != null)
+            //{
+            //    await _photoStockService.DeletePhoto(bookUpdateInput.Picture);
+            //    bookUpdateInput.Picture = resultPhotoService.Uri;
+            //}
+
             var response = await _client.PutAsJsonAsync<BookUpdateInput>("books", bookUpdateInput);
 
             return response.IsSuccessStatusCode;

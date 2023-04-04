@@ -21,7 +21,6 @@ namespace Bookshop.Web.Services
 
         public async Task<PhotoViewModel> UploadPhoto(IFormFile photo)
         {
-            throw new NotImplementedException();
             if (photo == null || photo.Length <= 0)
             {
                 return null;
