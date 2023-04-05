@@ -21,7 +21,6 @@ namespace Bookshop.Web.Extensions
             }).AddHttpMessageHandler<ClientCredentialTokenHandler>();
 
             Services.AddHttpClient<IPhotoStockService, PhotoStockService>(opt =>
-
             {
                 opt.BaseAddress = new Uri($"{serviceApiSettings.GatewayBaseUri}/{serviceApiSettings.PhotoStock.Path}");
             }).AddHttpMessageHandler<ClientCredentialTokenHandler>();

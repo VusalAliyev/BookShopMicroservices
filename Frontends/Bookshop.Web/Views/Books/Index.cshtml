@@ -10,19 +10,19 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Kurslar</h5>
+                <h5 class="card-title">Books</h5>
 
-                <a asp-controller="Books" asp-action="Create" class="btn btn-primary mb-3">Kitab oluştur</a>
+                <a asp-controller="Books" asp-action="Create" class="btn btn-primary mb-3">Create Book</a>
                 @if(Model != null && Model.Any())
                 {
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>Resim</th>
-                                <th>Kitab isim</th>
-                                <th>Fiyat</th>
-                                <th>Süre</th>
-                                <th>İşlemler</th>
+                                <th>Picture</th>
+                                <th>Book Name</th>
+                                <th>Price</th>
+                                <th>Page</th>
+                                <th>Operations</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,8 +34,8 @@
                                     <td>@item.Price</td>
                                     <td>@item.Feature.Pages</td>
                                     <td>
-                                        <a asp-controller="Books" asp-action="Update" asp-route-id="@item.Id" class="btn btn-success btn-sm">Güncelle</a>
-                                        <a asp-controller="Books" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Sil</a>
+                                        <a asp-controller="Books" asp-action="Update" asp-route-id="@item.Id" class="btn btn-success btn-sm">Update</a>
+                                        <a asp-controller="Books" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
                             }
@@ -45,7 +45,7 @@
                 else
                 {
                 <div class="alert alert-info">
-                    Kayıtlı kurs bulunamadı
+                    No registered course found
                 </div>
                 }
                 

@@ -14,7 +14,6 @@ namespace Bookshop.Web.Services
         }
         public async Task<bool> DeletePhoto(string photoUrl)
         {
-            throw new NotImplementedException();
             var response = await _httpClient.DeleteAsync($"photos?photoUrl={photoUrl}");
             return response.IsSuccessStatusCode;
         }
@@ -25,8 +24,7 @@ namespace Bookshop.Web.Services
             {
                 return null;
             }
-            // örnek dosya ismi= 203802340234.jpg
-            var randonFilename = $"{Guid.NewGuid().ToString()}{Path.GetExtension(photo.FileName)}";
+            var randonFilename = $"{Guid.NewGuid()}{Path.GetExtension(photo.FileName)}";
 
             using var ms = new MemoryStream();
 

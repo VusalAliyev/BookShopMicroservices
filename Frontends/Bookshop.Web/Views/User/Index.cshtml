@@ -4,18 +4,18 @@
 }
 
 @model UserViewModel
-<div class="row">
+<div class="row mt-5">
 
     <div class="col-md-9">
         <div class="card">
             <div class="card-body">
 
-                <h5 class="card-title">Kullanıcı bilgileri</h5>
+                <h5 class="card-title">User Information</h5>
 
                 <table class="table table-striped">
 
                     <tr>
-                        <td>Kullanıcı adı</td>
+                        <td>Username</td>
                         <td>@Model.UserName</td>
                     </tr>
                     <tr>
@@ -23,7 +23,7 @@
                         <td>@Model.Email</td>
                     </tr>
                     <tr>
-                        <td>Şehir</td>
+                        <td>City</td>
                         <td>@Model.City</td>
                     </tr>
                 </table>
@@ -33,7 +33,7 @@
       <div class="col-md-3">
         <div class="list-group">
 
-            <a asp-controller="Books" asp-action="Index" class="list-group-item list-group-item-action">Kitablarım</a>
+            <a asp-controller="Books" asp-action="Index" class="list-group-item list-group-item-action">My Books</a>
         </div>
     </div>
 </div>
