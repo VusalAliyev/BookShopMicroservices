@@ -2,6 +2,6 @@
 {
     public class PhotoViewModel
     {
-        public string Uri { get; set; }
+        public string Url { get; set; }
     }
 }

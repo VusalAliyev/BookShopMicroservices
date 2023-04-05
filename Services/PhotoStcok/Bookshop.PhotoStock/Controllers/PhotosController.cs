@@ -12,6 +12,7 @@ namespace Bookshop.PhotoStock.Controllers
         [HttpPost]
         public async Task<IActionResult> PhotoSave(IFormFile photo, CancellationToken cancellationToken)
         {
+
             if (photo != null && photo.Length > 0)
             {
                 var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photos", photo.FileName);

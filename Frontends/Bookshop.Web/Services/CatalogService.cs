@@ -21,12 +21,12 @@ namespace Bookshop.Web.Services
         public async Task<bool> CreateBookAsync(BookCreateInput bookCreateInput)
         {
 
-            //  var resultPhotoService = await _photoStockService.UploadPhoto(bookCreateInput.PhotoFormFile);
+            var resultPhotoService = await _photoStockService.UploadPhoto(bookCreateInput.PhotoFormFile);
 
-            //if (resultPhotoService != null)
-            //{
-            //    bookCreateInput.Picture = resultPhotoService.Uri;
-            //}
+            if (resultPhotoService != null)
+            {
+                bookCreateInput.Picture = resultPhotoService.Url;
+            }
 
             var response = await _client.PostAsJsonAsync<BookCreateInput>("books", bookCreateInput);
 
@@ -108,13 +108,13 @@ namespace Bookshop.Web.Services
 
         public async Task<bool> UpdateBookAsync(BookUpdateInput bookUpdateInput)
         {
-            //var resultPhotoService = await _photoStockService.UploadPhoto(bookUpdateInput.PhotoFormFile);
+            var resultPhotoService = await _photoStockService.UploadPhoto(bookUpdateInput.PhotoFormFile);
 
-            //if (resultPhotoService != null)
-            //{
-            //    await _photoStockService.DeletePhoto(bookUpdateInput.Picture);
-            //    bookUpdateInput.Picture = resultPhotoService.Uri;
-            //}
+            if (resultPhotoService != null)
+            {
+                await _photoStockService.DeletePhoto(bookUpdateInput.Picture);
+                bookUpdateInput.Picture = resultPhotoService.Url;
+            }
 
             var response = await _client.PutAsJsonAsync<BookUpdateInput>("books", bookUpdateInput);
 
