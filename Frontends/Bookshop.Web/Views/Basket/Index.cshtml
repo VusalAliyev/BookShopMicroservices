@@ -29,7 +29,7 @@
                             <tr>
                                 <td>@item.BookName</td>
                                 <td>
-                                    @item.GetCurrentPrice TL @(Model.HasDiscount ? $"(%{Model.DiscountRate.Value} applied)" : "")
+                                    @item.GetCurrentPrice $ @(Model.HasDiscount ? $"(%{Model.DiscountRate.Value} applied)" : "")
                                 </td>
                                 <td>
                                     <a class="btn btn-danger" asp-controller="Basket" asp-action="RemoveBasketItem" asp-route-bookId="@item.BookId">Delete</a>
@@ -56,7 +56,7 @@
                         @if (Model.HasDiscount)
                         {
                             <div class="alert alert-success">
-                                "@Model.DiscountCode"indirim kodu uygulandı
+                                "@Model.DiscountCode"disount code applied
                                 <a asp-controller="Basket" asp-action="CancelApplyDiscount"> (cancel)</a>
                             </div>
                         }
